@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.img figure {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  background-color: #3498db;
+  height: 500px;
+  transition: all ease-in 0.5s;
+  cursor: pointer;
+}
+
+
+
+.img figure img {
+  max-height: 100%;
+  transition: all ease 0.5s 0.1s;
+}
+
+.img figcaption {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 50px;
+  font-family: "Raleway", Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: 100%;
+}
+
+.img h2 {
+  padding-top: 15px;
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.img h2 b {
+  display: inline-block;
+  font-weight: 700;
+ 
+}
+.img figure:hover h2 b {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.img p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  max-width: 160px;
+  margin-bottom: 2rem;
+  text-align: right;
+  line-height: 150%;
+  border-right: 5px solid white;
+  padding-right: 13px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: all ease 0.25s 0.3s;
+}
+
+.img figcaption::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  content: "";
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg)
+    translate3d(0, -100%, 0);
+  transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0);
+  transition: all ease 0.5s;
+}
+
+.img figure:hover img {
+  opacity: 0.6;
+  scale: 1.1;
+}
+
+.img figure:hover figcaption::before {
+  transform: translate3d(-100%, 100%, 0) rotate3d(0, 0, 1, 45deg);
+}
+
+.img figure:hover figcaption p {
+  opacity: 1;
+}
