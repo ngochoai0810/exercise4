@@ -113,12 +113,17 @@
   right: 0;
   top: 0;
   z-index: 99999;
-  transition: all ease 2s 1s;
-  
+	animation: spin ease 5s 0.5s;
+	opacity: 0;
 }
-.loader--hidden{
-  opacity: 0;
-  visibility: hidden;
+
+@keyframes spin {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 .loader-inner {
   bottom: 0;
@@ -193,7 +198,3 @@
   top: 35px;
 }
 
-@keyframes spin {
-  from { transform: rotate(0turn)}
-  to { transform: rotate(1turn);}
-}
